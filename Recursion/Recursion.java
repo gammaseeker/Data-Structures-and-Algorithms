@@ -20,7 +20,7 @@ public class Recursion
 		}
 	}
 	
-	public static int powerN(int base, int n) 
+	public static int powerN(int base, int n) //Exercise 18.5
 	{
 	    if (n < 0) {
 	        throw new IllegalArgumentException("Illegal Power Argument");

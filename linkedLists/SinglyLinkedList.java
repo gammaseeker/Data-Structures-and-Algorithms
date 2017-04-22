@@ -19,26 +19,8 @@ public class SinglyLinkedList extends LinkedList
  	*/
     public void add(Node node)
     {
-    	
-    	Node x = head;
-    	if(x.getNext() == null)
-    	{
-    		x.setNext(node);
-    		length++;
-    	}
-    	else
-    	{
-    		while(x.getNext() != null)
-        	{
-        		x = x.getNext();
-        		if(x.getNext() == null)
-        		{
-        			x.setNext(node);
-        			length++;
-        			break;
-        		}
-        	}
-    	}
+    	lastNode().setNext(node);
+    	length++;
     }
     
     /**
@@ -58,12 +40,15 @@ public class SinglyLinkedList extends LinkedList
     	if(index == 0)
     	{
     		head = node;
+    		length++;
     	}
     	else
     	{
     		if(index == length)
 	    	{
+    			
 	    		add(node);
+	    		
 	    	}
     		else
     		{
@@ -75,10 +60,11 @@ public class SinglyLinkedList extends LinkedList
     	    	Node temp = x;
     	    	node.setNext(temp.getNext());
     	    	temp.setNext(node);
+    	    	length++;
     		}
     	}
     	
-    	length++;
+    	
     }
     
     /**
@@ -118,6 +104,16 @@ public class SinglyLinkedList extends LinkedList
     	}
     	length--;
     }
+    
+    private Node lastNode()
+	{
+		Node x = head;
+		for(int i = 0; i < length-1; i++)
+		{
+			x = x.getNext();
+		}
+		return x;
+	}
 
 }
 

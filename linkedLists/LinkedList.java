@@ -74,6 +74,7 @@ abstract public class LinkedList
 		Node x = head;
 		for(int i = 0; i < length; i++)
 		{
+			
 			System.out.println(x.getData());
 			x = x.getNext();
 		}

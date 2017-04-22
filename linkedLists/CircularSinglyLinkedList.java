@@ -18,31 +18,13 @@ public class CircularSinglyLinkedList extends LinkedList
 	 public void add(Node node)//Finished
     {
     	
-    	Node x = head;
-    	if(x.getNext() == x)
-    	{
-    		x.setNext(node);
-    		node.setNext(x);
-    		length++;
-    	}
-    	else
-    	{
-    		while(x.getNext() != x)
-        	{
-        		x = x.getNext();
-        		if(x.getNext() == head)
-        		{
-        			x.setNext(node);
-        			node.setNext(head);
-        			length++;
-        			break;
-        		}
-        	}
-    	}
+    	lastNode().setNext(node);
+    	node.setNext(head);
+    	length++;
     }
 
 	@Override
-	 public void insert(Node node, int index)//TODO
+	 public void insert(Node node, int index)//Finished
     {
     	
     	if(index > length)
@@ -53,14 +35,18 @@ public class CircularSinglyLinkedList extends LinkedList
     	
     	if(index == 0)
     	{
+    		
+    		node.setNext(head);
+    		lastNode().setNext(node);
     		head = node;
+    		length++;
     	}
     	else
     	{
     		if(index == length)
-	    	{
-	    		add(node);
-	    	}
+        	{
+        		add(node);
+        	}
     		else
     		{
     			Node x = head;
@@ -71,10 +57,10 @@ public class CircularSinglyLinkedList extends LinkedList
     	    	Node temp = x;
     	    	node.setNext(temp.getNext());
     	    	temp.setNext(node);
+    	    	length++;
     		}
     	}
-    	
-    	length++;
+		
     }
 
 	@Override
@@ -82,19 +68,16 @@ public class CircularSinglyLinkedList extends LinkedList
     {
     	if(index == (length-1))
     	{
-    		Node x = head;
-    		for(int i = 0; i < length-1; i++)
-    		{
-    			x = x.getNext();
-    		}
-    		x.setNext(null);
+    		
+    		lastNode().setNext(head);
     	}
     	else
     	{
     		if(index == 0)
     		{
+    			lastNode().setNext(head.getNext());
     			Node temp = head;
-    			head = head.getNext();
+    			head = temp.getNext();
     			temp.setNext(null);
     		}
     		else
@@ -105,13 +88,27 @@ public class CircularSinglyLinkedList extends LinkedList
     				x = x.getNext();
     			}
     			Node temp = x;
-    			x.setNext(temp.getNext().getNext());
-    	    	temp.getNext().setNext(null);
+    			temp.setNext(x.getNext().getNext());
+    	    	x.getNext().setNext(null);
+    
     		}
     	}
     	length--;
     }
 	
+	/**
+	 * Helper method to traverse to last node of a linked list
+	 * @return last node of a linked list
+	 */
+	private Node lastNode()
+	{
+		Node x = head;
+		for(int i = 0; i < length-1; i++)
+		{
+			x = x.getNext();
+		}
+		return x;
+	}
 	/**
 	 * Traverses linked list twice
 	 */
@@ -120,8 +117,10 @@ public class CircularSinglyLinkedList extends LinkedList
 		Node x = head;
 		for(int i = 0; i < 2*length; i++)
 		{
+			
 			System.out.println(x.getData());
 			x = x.getNext();
+			System.out.println("WORKING");
 		}
 	}
 }

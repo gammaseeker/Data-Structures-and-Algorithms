@@ -3,9 +3,9 @@ package linkedLists;
 public class Test {
 	public static void main(String[] args)
 	{
-		System.out.println("Begin test for Singly Linked List");
-		singlyLinkedListTest();
-		System.out.println();
+	//	System.out.println("Begin test for Singly Linked List");
+	//	singlyLinkedListTest();
+	//	System.out.println();
 		System.out.println("Begin test for Circular Singly Linked List");
 		circularSinglyLinkedListTest();
 		
@@ -26,7 +26,7 @@ public class Test {
 		list.add(node2);
 		list.add(node3);
 		list.add(node5);
-		list.insert(node6, 1);
+		list.insert(node6, 4);
 		list.display();
 		System.out.println();
 		System.out.println("Length of: " + list.size());
@@ -49,6 +49,9 @@ public class Test {
 		cSList.add(new Node(3));
 		cSList.add(new Node(4));
 		cSList.add(new Node(5));
+		//cSList.insert(new Node(8), 0);
+		//cSList.delete(0);
+		cSList.delete(2);
 		cSList.display();
 	}
 }

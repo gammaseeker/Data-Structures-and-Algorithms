@@ -1,6 +1,7 @@
 package linkedLists;
 
-public class SinglyLinkedList {
+public class SinglyLinkedList implements LinkedList
+{
 	Node head;
 
     public SinglyLinkedList(Node node) { 
@@ -74,6 +75,16 @@ public class SinglyLinkedList {
         	}
     	}
     	return false;
+    }
+    
+    public boolean delete(SinglyLinkedList list, String item)
+    {
+    	return false;
+    }
+    
+    public void display()
+    {
+    	
     }
 }
 

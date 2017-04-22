@@ -8,6 +8,12 @@ public class SinglyLinkedList {
        head = node;
 
     }
+    /**
+     * 
+     * @param list the SinglyLinkedList to search in.
+     * @param target the String to search for.
+     * @return a string that is specified by @param target.
+     */
     public String search(SinglyLinkedList list, String target)
     {
     	Node x = list.head;
@@ -25,7 +31,13 @@ public class SinglyLinkedList {
     	}
     	return null;
     }
-    public  String search(SinglyLinkedList list, int target)
+    /**
+     * 
+     * @param list the SinglyLinkedList to search in.
+     * @param target the index to search for.
+     * @return a string that is specified by @param target. 
+     */
+    public String search(SinglyLinkedList list, int target)
     {
     	int ctr = 0;
     	Node x = list.head;
@@ -35,7 +47,12 @@ public class SinglyLinkedList {
     	}
     	return x.getData();
     }
-   
+   /**
+    * 
+    * @param list the SinglyLinkedList to add in.
+    * @param item the data of the node.
+    * @return whether add was successful or not.
+    */
     public boolean add(SinglyLinkedList list, String item) 
     { 
     	Node x = list.head;

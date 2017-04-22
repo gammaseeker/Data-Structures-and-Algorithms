@@ -48,6 +48,30 @@ public class SinglyLinkedList implements LinkedList
     	}
     	return x.getData();
     }
+    
+    public boolean add(SinglyLinkedList list, Node node)
+    {
+    	Node x = list.head;
+    	String item = node.getData();
+    	if(x.getNext() == null)
+    	{
+    		x.setNext(new Node(item));
+    		return true;
+    	}
+    	else
+    	{
+    		while(x.getNext() != null)
+        	{
+        		x = x.getNext();
+        		if(x.getNext() == null)
+        		{
+        			x.setNext(new Node(item));
+        			return true;
+        		}
+        	}
+    	}
+    	return false;
+    }
    /**
     * 
     * @param list the SinglyLinkedList to add in.
@@ -77,6 +101,29 @@ public class SinglyLinkedList implements LinkedList
     	return false;
     }
     
+    public boolean add(SinglyLinkedList list, String item, int index)
+    {
+    	Node x = list.head;
+    	int ctr = 0;
+    	if(x.getNext() == null)
+    	{
+    		x.setNext(new Node(item));
+    		return true;
+    	}
+    	else
+    	{
+    		while(x.getNext() != null)
+        	{
+        		x = x.getNext();
+        		if(x.getNext() == null)
+        		{
+        			x.setNext(new Node(item));
+        			return true;
+        		}
+        	}
+    	}
+    	return false;
+    }
     public boolean delete(SinglyLinkedList list, String item)
     {
     	return false;

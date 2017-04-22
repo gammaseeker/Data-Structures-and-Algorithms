@@ -20,10 +20,22 @@ public class Test {
 		list.add(list, "Like");
 		list.add(list, "Cats");
 		
+		SinglyLinkedList list2 = new SinglyLinkedList(node1);
+		list.add(list, node2);
+		list.add(list, node3);
+		list.add(list, node4);
+		list.add(list, node5);
+		
 		System.out.println(list.search(list, "Hello"));
 		System.out.println(list.search(list, "World"));
 		System.out.println(list.search(list, "I"));
 		System.out.println(list.search(list, "Like"));
 		System.out.println(list.search(list, "Cats"));
+		
+		System.out.println(list2.search(list, "Hello"));
+		System.out.println(list2.search(list, "World"));
+		System.out.println(list2.search(list, "I"));
+		System.out.println(list2.search(list, "Like"));
+		System.out.println(list2.search(list, "Cats"));
 	}
 }

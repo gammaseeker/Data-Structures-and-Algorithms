@@ -5,11 +5,13 @@ public class CircularDoublyLinkedList extends LinkedList
 	public CircularDoublyLinkedList()
 	{
 		super();
+		head.setPrev(head);
 	}
 	
 	public CircularDoublyLinkedList(Node node)
 	{
 		super(node);
+		node.setPrev(node);
 	}
 
 	@Override

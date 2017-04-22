@@ -13,8 +13,27 @@ public class DoublyLinkedList extends LinkedList
 	}
 	
 	@Override
-	public void add(Node node) {
-		// TODO Auto-generated method stub
+	public void add(Node node) 
+	{
+		Node x = head;
+    	if(x.getNext() == null)
+    	{
+    		x.setNext(node);
+    		length++;
+    	}
+    	else
+    	{
+    		while(x.getNext() != null)
+        	{
+        		x = x.getNext();
+        		if(x.getNext() == null)
+        		{
+        			x.setNext(node);
+        			length++;
+        			break;
+        		}
+        	}
+    	}
 		
 	}
 

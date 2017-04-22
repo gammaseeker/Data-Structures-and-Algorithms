@@ -39,6 +39,7 @@ public class SinglyLinkedList extends LinkedList
 
     	if(index == 0)
     	{
+    		node.setNext(head.getNext());
     		head = node;
     		length++;
     	}

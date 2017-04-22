@@ -22,8 +22,8 @@ abstract public class LinkedList
 	 /**
      * 
      * @param list the SinglyLinkedList to search in.
-     * @param target the String to search for.
-     * @return a string that is specified by @param target.
+     * @param target the int to search for.
+     * @return a node that is specified by @param target.
      */
     public Node search(int target)
     {

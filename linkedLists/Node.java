@@ -1,12 +1,17 @@
 package linkedLists;
 
-public class Node {
-	private String data;
+public class Node  {
+	private int data;
 	private Node next;
-	public Node(String item)
+	public Node()
 	{
-		data = item;
 		
+	}
+	
+	public Node(int item)
+	{
+		this.data = item;
+		this.next = null;
 	}
 	
 	public boolean setNext(Node next)
@@ -17,15 +22,11 @@ public class Node {
 	
 	public Node getNext()
 	{
-		if(this.next != null)
-		{
-			return this.next;
-		}
-		return null;
+		return this.next;
 	}
 	
-	public String getData()
+	public int getData()
 	{
-		return data;
+		return this.data;
 	}
 }

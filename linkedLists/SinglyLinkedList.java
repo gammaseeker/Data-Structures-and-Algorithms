@@ -1,137 +1,115 @@
 package linkedLists;
 
-public class SinglyLinkedList implements LinkedList
+public class SinglyLinkedList extends LinkedList
 {
-	Node head;
-
-    public SinglyLinkedList(Node node) { 
-
-       head = node;
-
-    }
-    /**
-     * 
-     * @param list the SinglyLinkedList to search in.
-     * @param target the String to search for.
-     * @return a string that is specified by @param target.
-     */
-    public String search(SinglyLinkedList list, String target)
-    {
-    	Node x = list.head;
-    	if(x.getData().equals(target))
-		{
-			return x.getData();
-		}
-    	while(x.getNext() != null)
-    	{
-    		x = x.getNext();
-    		if(x.getData().equals(target))
-    		{
-    			return x.getData();
-    		}
-    	}
-    	return null;
-    }
-    /**
-     * 
-     * @param list the SinglyLinkedList to search in.
-     * @param target the index to search for.
-     * @return a string that is specified by @param target. 
-     */
-    public String search(SinglyLinkedList list, int target)
-    {
-    	int ctr = 0;
-    	Node x = list.head;
-    	while(ctr != target)
-    	{
-    		x = x.getNext();
-    	}
-    	return x.getData();
-    }
-    
-    public boolean add(SinglyLinkedList list, Node node)
-    {
-    	Node x = list.head;
-    	String item = node.getData();
-    	if(x.getNext() == null)
-    	{
-    		x.setNext(new Node(item));
-    		return true;
-    	}
-    	else
-    	{
-    		while(x.getNext() != null)
-        	{
-        		x = x.getNext();
-        		if(x.getNext() == null)
-        		{
-        			x.setNext(new Node(item));
-        			return true;
-        		}
-        	}
-    	}
-    	return false;
-    }
-   /**
-    * 
-    * @param list the SinglyLinkedList to add in.
-    * @param item the data of the node.
-    * @return whether add was successful or not.
-    */
-    public boolean add(SinglyLinkedList list, String item) 
+	
+	public SinglyLinkedList() 
     { 
-    	Node x = list.head;
-    	if(x.getNext() == null)
-    	{
-    		x.setNext(new Node(item));
-    		return true;
-    	}
-    	else
-    	{
-    		while(x.getNext() != null)
-        	{
-        		x = x.getNext();
-        		if(x.getNext() == null)
-        		{
-        			x.setNext(new Node(item));
-        			return true;
-        		}
-        	}
-    	}
-    	return false;
+    	super();
+    }
+	
+    public SinglyLinkedList(Node node) 
+    { 
+    	super(node);
     }
     
-    public boolean add(SinglyLinkedList list, String item, int index)
-    {
-    	Node x = list.head;
-    	int ctr = 0;
-    	if(x.getNext() == null)
-    	{
-    		x.setNext(new Node(item));
-    		return true;
-    	}
-    	else
-    	{
-    		while(x.getNext() != null)
-        	{
-        		x = x.getNext();
-        		if(x.getNext() == null)
-        		{
-        			x.setNext(new Node(item));
-        			return true;
-        		}
-        	}
-    	}
-    	return false;
-    }
-    public boolean delete(SinglyLinkedList list, String item)
-    {
-    	return false;
-    }
-    
-    public void display()
+    /**
+      * Appends node to end of linked list
+      * @param list the SinglyLinkedList to add in.
+	  * @param node the node to be added.
+     */
+    public void add(Node node)
     {
     	
+    	Node x = head;
+    	if(x.getNext() == null)
+    	{
+    		x.setNext(node);
+    		length++;
+    	}
+    	else
+    	{
+    		while(x.getNext() != null)
+        	{
+        		x = x.getNext();
+        		if(x.getNext() == null)
+        		{
+        			x.setNext(node);
+        			length++;
+        			break;
+        		}
+        	}
+    	}
     }
+    
+    public void insert(Node node, int index)
+    {
+    	
+    	if(index > length)
+    	{
+    		System.out.println("Index must be less than length");
+    		return;
+    	}
+
+    	if(index == 0)
+    	{
+    		head = node;
+    	}
+    	else
+    	{
+    		if(index == length)
+	    	{
+	    		add(node);
+	    	}
+    		else
+    		{
+    			Node x = head;
+    			for(int i = 0; i < index-1; i++)
+    	    	{
+    	    		x = x.getNext();
+    	    	}
+    	    	Node temp = x;
+    	    	node.setNext(temp.getNext());
+    	    	temp.setNext(node);
+    		}
+    	}
+    	
+    	length++;
+    }
+    
+    public void delete(int index)
+    {
+    	if(index == (length-1))
+    	{
+    		Node x = head;
+    		for(int i = 0; i < length-1; i++)
+    		{
+    			x = x.getNext();
+    		}
+    		x.setNext(null);
+    	}
+    	else
+    	{
+    		if(index == 0)
+    		{
+    			Node temp = head;
+    			head = head.getNext();
+    			temp.setNext(null);
+    		}
+    		else
+    		{
+    			Node x = head;
+    			for(int i = 0; i < index-1; i++)
+    			{
+    				x = x.getNext();
+    			}
+    			Node temp = x;
+    			x.setNext(temp.getNext().getNext());
+    	    	temp.getNext().setNext(null);
+    		}
+    	}
+    	length--;
+    }
+
 }
 

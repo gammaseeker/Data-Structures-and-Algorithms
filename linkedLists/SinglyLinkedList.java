@@ -15,8 +15,7 @@ public class SinglyLinkedList extends LinkedList
     
     /**
       * Appends node to end of linked list
-      * @param list the SinglyLinkedList to add in.
-	  * @param node the node to be added.
+      * @param node the node to be added.
      */
     public void add(Node node)
     {

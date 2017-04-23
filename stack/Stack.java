@@ -21,19 +21,11 @@ public class Stack {
 	
 	public boolean isFull()
 	{
-		if(theStack.size() == length)
-		{
-			return true;
-		}
-		return false;
+		return theStack.size() == length;
 	}
 	public boolean isEmpty()
 	{
-		if(theStack.size() == 0)
-		{
-			return true;
-		}
-		return false;
+		return theStack.size() == 0;
 	}
 	public boolean push(int data)
 	{

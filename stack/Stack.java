@@ -14,6 +14,11 @@ public class Stack {
 		top = -1;
 	}
 	
+	public int size()
+	{
+		return length;
+	}
+	
 	public boolean isFull()
 	{
 		if(theStack.size() == length)
@@ -41,13 +46,24 @@ public class Stack {
 		theStack.add(top, data);
 		return true;
 	}
-	public boolean pop()
+	public int pop()
 	{
-		return true;
+		if(isEmpty())
+		{
+			System.out.println("Stack is empty");
+			return -1;
+		}
+		top--;
+		return theStack.remove(top);
 	}
 	public int peek()
 	{
-		return -1;
+		if(isEmpty())
+		{
+			System.out.println("Stack is empty");
+			return -1;
+		}
+		return theStack.get(top);
 	}
 }
 

@@ -41,4 +41,35 @@ public class Node {
 	{
 		return right;
 	}
+	
+	public Node getParent()
+	{
+		return parent;
+	}
+	
+	public void insert(int data)
+	{
+		if(data <= this.data)
+		{
+			if(left == null)
+			{
+				setLeft(new Node(data));
+			}
+			else
+			{
+				left.insert(data);
+			}
+		}
+		else
+		{
+			if(right == null)
+			{
+				setRight(new Node(data));
+			}
+			else
+			{
+				right.insert(data);
+			}
+		}
+	}
 }

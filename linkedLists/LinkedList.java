@@ -47,6 +47,18 @@ abstract public class LinkedList
     	}
     	return null;
     }
+    
+    public int get(int index)
+    {
+    	Node x = head;
+    	int ctr = 0;
+    	while(ctr != index)
+    	{
+    		x = x.getNext();
+    		ctr++;
+    	}
+    	return x.getData();
+    }
     /**
     * Appends node to end of linked list
 	* @param node the node to be added.

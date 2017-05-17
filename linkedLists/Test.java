@@ -3,14 +3,14 @@ package linkedLists;
 public class Test {
 	public static void main(String[] args)
 	{
-	/*	System.out.println("Begin test for Singly Linked List");
+		System.out.println("Begin test for Singly Linked List");
 		singlyLinkedListTest();
 		System.out.println();
-		System.out.println("Begin test for Circular Singly Linked List");
+		/*	System.out.println("Begin test for Circular Singly Linked List");
 		circularSinglyLinkedListTest();
 		*/
 		
-		doublyLinkedListTest();
+		//doublyLinkedListTest();
 	}
 	
 	public static void singlyLinkedListTest()
@@ -30,7 +30,7 @@ public class Test {
 		list.add(node5);
 		list.insert(node6, 4);
 		list.display();
-		System.out.println();
+		System.out.println("BOI " + list.get(4));
 		System.out.println("Length of: " + list.size());
 		System.out.println();
 		list.delete(3);

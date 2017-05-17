@@ -33,19 +33,11 @@ abstract public class LinkedList
     public Node search(int target)
     {
     	Node x = head;
-    	if(x.getData() == (target))
-		{
-			return x;
-		}
-    	while(x.getNext() != null)
+    	while(x.getNext() != null && x.getData()!= target)
     	{
     		x = x.getNext();
-    		if(x.getData() == (target))
-    		{
-    			return x;
-    		}
     	}
-    	return null;
+    	return x;
     }
     
     public int get(int index)

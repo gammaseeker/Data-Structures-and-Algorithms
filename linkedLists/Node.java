@@ -42,4 +42,9 @@ public class Node  {
 	{
 		return this.data;
 	}
+	
+	public String toString()
+	{
+		return Integer.toString(this.data);
+	}
 }

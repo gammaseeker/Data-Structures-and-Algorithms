@@ -5,38 +5,49 @@ public class HashTable {
 	
 	private LinkedList<Integer>[] hashTable;
 	public int m = 11;
-	public final double A = (Math.sqrt(5) - 1)/2;
 	
 	@SuppressWarnings("unchecked")
 	public HashTable()
 	{
-		hashTable = new LinkedList[11];
+		this.hashTable = new LinkedList[11];
 	}
 	
 	@SuppressWarnings("unchecked")
 	public HashTable(int capacity)
 	{
-		hashTable = new LinkedList[capacity];
+		this.hashTable = new LinkedList[capacity];
 	}
 	
+	public int getCapacity()
+	{
+		return m;
+	}
+	
+	public void setCapacity(int capacity)
+	{
+		if(capacity < m)
+		{
+			System.out.println("Capacity must be greater than m");
+		}
+		else
+		{
+			this.m = capacity;
+		}
+	}
 	private int hash(int key)
 	{
 		return divisionMethod(key);
+		//return myHash(key);
 	}
 	
 	private int divisionMethod(int key)
 	{
-		return key % m;
-	}
-	
-	/*private int multiplicationMethod(int data)Requires more research
-	{
-		return 
-	}*/
+		return key % this.m;
+	}	
 	
 	private int myHash(int key)
 	{
-		int num = key % m;
+		int num = key % this.m;
 		if(num%2 == 0)
 		{
 			return num % 19;
@@ -47,32 +58,29 @@ public class HashTable {
 		}
 	}
 	
-	public void put(int key, int data)
+	public void insert(int key, int data)
 	{
 		int index = hash(key);
-		hashTable[index].add(data);
+		this.hashTable[index].add(data);
 	}
 	
 	public int search(int data)
 	{
 		int index = hash(data);
-		for(int i = 0; i < hashTable[index].size(); i++)
+		for(int i = 0; i < this.hashTable[index].size(); i++)
 		{
-			if(hashTable[index].get(i) == data)
+			if(this.hashTable[index].get(i) == data)
 			{
-				return hashTable[index].get(i);
+				return this.hashTable[index].get(i);
 			}
 		}
 		return 0;
 	}
 	
-	public void delete()
+	public void delete(int key, int data)
 	{
-		
+		int index = hash(key);
+		this.hashTable[index].remove(data);
 	}
 	
-	public int get()
-	{
-		return 0;
-	}
 }

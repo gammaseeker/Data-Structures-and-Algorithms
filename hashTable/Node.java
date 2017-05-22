@@ -10,8 +10,9 @@ public class Node  {
 		
 	}
 	
-	public Node(int item)
+	public Node(int key, int item)
 	{
+		this.key = key;
 		this.data = item;
 		this.next = null;
 		this.prev = null;

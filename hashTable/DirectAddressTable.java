@@ -7,7 +7,7 @@ public class DirectAddressTable {
 		table = new Node[m];
 		for(int i = 0; i < m; i++)
 		{
-			table[i] = new Node(i);
+			table[i] = new Node(i, i);
 			table[i].setKey(i);
 		}
 	}

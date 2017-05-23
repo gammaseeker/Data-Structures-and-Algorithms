@@ -4,9 +4,9 @@ import java.util.*;
 public class HashTable {
 	
 	private LinkedList<Integer>[] hashTable;
-	public int m = 11;
-	
-	@SuppressWarnings("unchecked")
+	private int capacity = 11;
+	private int m = 3;
+	@SuppressWarnings("unchecked")//Tells compiler to trust programmer, everything will compile
 	public HashTable()
 	{
 		this.hashTable = new LinkedList[11];
@@ -20,18 +20,18 @@ public class HashTable {
 	
 	public int getCapacity()
 	{
-		return m;
+		return capacity;
 	}
 	
 	public void setCapacity(int capacity)
 	{
-		if(capacity < m)
+		if(capacity < this.capacity)
 		{
-			System.out.println("Capacity must be greater than m");
+			System.out.println("Capacity must be greater than " + this.capacity);
 		}
 		else
 		{
-			this.m = capacity;
+			this.capacity = capacity;
 		}
 	}
 	private int hash(int key)
@@ -58,29 +58,82 @@ public class HashTable {
 		}
 	}
 	
-	public void insert(int key, int data)
+/*	public void insert(int key, int data)
 	{
 		int index = hash(key);
 		this.hashTable[index].add(data);
+	}*/
+	
+	public void insert(Node n)
+	{
+		int index = hash(n.getKey());
+		if(this.hashTable[index] == null)
+		{
+			LinkedList<Integer> chain = new LinkedList<Integer>();
+			chain.add(n.getData());
+			this.hashTable[index] = chain;
+		}
+		else
+		{
+			this.hashTable[index].add(n.getData());
+		}
 	}
 	
-	public int search(int data)
+	public LinkedList<Integer> search(int key)
 	{
-		int index = hash(data);
+		int index = hash(key);
+		if(this.hashTable[index] != null)
+		{
+			return this.hashTable[index];
+		}
+		return null;
+	}
+	
+	public Integer search(Node n)
+	{
+		int index = hash(n.getKey());
 		for(int i = 0; i < this.hashTable[index].size(); i++)
 		{
-			if(this.hashTable[index].get(i) == data)
+			if(this.hashTable[index].get(i) == n.getData())
 			{
 				return this.hashTable[index].get(i);
 			}
-		}
-		return 0;
+		}	
+		return null;
 	}
 	
-	public void delete(int key, int data)
+	public void delete(int key)
 	{
 		int index = hash(key);
-		this.hashTable[index].remove(data);
+		this.hashTable[index] = null;
 	}
 	
+	public void delete(Node n)
+	{
+		int index = hash(n.getKey());
+		for(int i = 0; i < this.hashTable[index].size(); i++)
+		{
+			if(this.hashTable[index].get(i) == n.getData())
+			{
+				this.hashTable[index].remove(i);
+			}
+		}	
+		
+	}
+	
+	public void display()
+	{
+		for(int i = 0; i < hashTable.length; i++)
+		{
+			System.out.print(i + " ");
+			if(hashTable[i] != null)
+			{
+				for(int j = 0; j < hashTable[i].size(); j++)
+				{
+					System.out.print(hashTable[i].get(j) + " ");
+				}
+			}
+			System.out.println();
+		}
+	}
 }

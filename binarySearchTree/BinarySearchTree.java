@@ -10,7 +10,6 @@ public class BinarySearchTree {
 	public BinarySearchTree(Node root)
 	{
 		this.root = root;
-		
 	}
 	
 	public BinarySearchTree(int data)
@@ -69,6 +68,7 @@ public class BinarySearchTree {
 		}
 		return x;
 	}
+	
 	public Node successor(Node n)
 	{
 		if(n.getRight() != null)
@@ -85,6 +85,7 @@ public class BinarySearchTree {
 		}
 		return y;
 	}
+	
 	public void insert(Node n)
 	{
 		insert(this.root, n);
@@ -123,7 +124,13 @@ public class BinarySearchTree {
 			}
 		}
 	}
+	
 	public void delete(Node n)
+	{
+		
+	}
+	
+	private void transplant(Node root, Node u , Node v)
 	{
 		
 	}
@@ -132,7 +139,6 @@ public class BinarySearchTree {
 	{
 		return 0;
 	}
-	
 	
 	public void inOrder()
 	{

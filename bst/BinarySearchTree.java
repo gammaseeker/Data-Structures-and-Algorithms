@@ -2,7 +2,7 @@ package bst;
 
 public class BinarySearchTree {
 	private Node root;
-	//private Node point;
+	
 	public BinarySearchTree()
 	{
 		

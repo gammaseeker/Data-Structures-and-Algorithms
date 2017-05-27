@@ -18,6 +18,8 @@ public class Test {
 		BinarySearchTree bst = new BinarySearchTree(root);
 		bst.preOrder();
 		System.out.println();
+		bst.inOrder();
+		System.out.println();
 		bst.postOrder();
 		//System.out.println(bst.search(10));
 	}

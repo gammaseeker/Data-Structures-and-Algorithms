@@ -39,11 +39,13 @@ public class Node {
 	public void setRight(Node right)
 	{
 		this.right = right;
+		right.parent = this;
 	}
 	
 	public void setLeft(Node left)
 	{
 		this.left = left;
+		left.parent = this;
 	}
 	
 	public String toString()

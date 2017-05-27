@@ -78,32 +78,8 @@ public class BinarySearchTree {
 	}
 	public void insert(Node n)
 	{
-		if(n.getData() <= root.getData())
-		{
-			if(root.getLeft() == null)
-			{
-				root.setLeft(n);
-				n.setParent(root);
-			}
-			if(root.getLeft() != null)
-			{
-				insert(n);
-			}
-			
-		}
-		if(n.getData() > root.getData())
-		{
-			if(root.getRight() == null)
-			{
-				root.setRight(n);
-				n.setParent(n);
-			}
-			if(root.getRight() != null)
-			{
-				insert(n);
-			}
-			
-		}
+		
+		
 	}
 	
 	public void delete(Node n)

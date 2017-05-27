@@ -102,17 +102,7 @@ public class BinarySearchTree {
 	
 	public void inOrder()
 	{
-		if(root.getLeft() == null &&  root.getRight() == null)
-		{
-			System.out.print(root.getData() + " ");
-		}
-		else
-		{
-			if(root.getLeft() != null)
-			{
-				
-			}
-		}
+		inOrder(root);
 	}
 	
 	private void inOrder(Node root)

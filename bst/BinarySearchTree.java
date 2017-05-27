@@ -21,43 +21,26 @@ public class BinarySearchTree {
 	
 	public Node search(int target)
 	{
-		if(root == null)
+		return search(this.root, target);
+	}
+	
+	public Node search(Node root, int target)
+	{
+		if(root == null || root.getData() == target)
 		{
-			return null;
+			return root;
+		}
+		
+		if(target < root.getData())
+		{
+			return search(root.getLeft(), target);
 		}
 		else
 		{
-			if(point.getData() == target)
-			{
-				point = this.root;
-				return point;
-			}
-			else
-			{
-				if(target > point.getData())
-				{
-					point = goRight(point);
-					return search(target);
-				}
-				else
-				{
-					point = goLeft(point);
-					return search(target);
-				}
-			}
+			return search(root.getRight(), target);
 		}
-		
 	}
-	
-	private Node goLeft(Node n)
-	{
-		return n.getLeft();
-	}
-	
-	private Node goRight(Node n)
-	{
-		return n.getRight();
-	}
+
 	
 	public void insert(Node n)
 	{
@@ -105,30 +88,24 @@ public class BinarySearchTree {
 		inOrder(root);
 	}
 	
-	private void inOrder(Node root)
-	{
-		if(root.getLeft() == null && root.getRight() == null)
+/*  private void inOrder(Node root)
+	{	
+		if(root!=null)
 		{
-		      System.out.print(root.getData() + " ");
+		    System.out.print(root.getData() + " ");
+		    preOrder(root.getLeft());
+		    preOrder(root.getRight());
 		}
-		else
-	    {
-	        
-	        if(root.getLeft()!= null)
-	        {
-	            
-	            inOrder(root.getLeft());
-	            System.out.print(root.getData() + " ");
-	        }
-	       
-	            if(root.getRight() != null)
-	            {
-	                inOrder(root.getRight());
-	               
-	            }
-	        
-	          
-	    }
+	}*/
+	
+	private void inOrder(Node root)
+	{	
+		if(root!=null)
+		{
+		   inOrder(root.getLeft());
+		   System.out.print(root.getData() + " ");
+		   inOrder(root.getRight());
+		}
 	}
 	
 	public void preOrder()
@@ -167,15 +144,19 @@ public class BinarySearchTree {
 	
 	private void postOrder(Node root)
 	{
-		if(root.getLeft() == null && root.getRight() == null){
+		if(root.getLeft() == null && root.getRight() == null)
+		{
 		     System.out.print(root.getData() + " ");
 		 }
-		    else{
-		        if(root.getLeft() != null){
+		    else
+		    {
+		        if(root.getLeft() != null)
+		        {
 		             postOrder(root.getLeft());
 		              
 		        }
-		        if(root.getRight() != null){
+		        if(root.getRight() != null)
+		        {
 		            postOrder(root.getRight());
 		            
 		        }

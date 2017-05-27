@@ -40,7 +40,7 @@ public class BinarySearchTree {
 		}
 	}
 
-	public Node minimum()
+	public Node minimum(Node root)
 	{
 		Node x = root;
 		while(x.getLeft() != null)
@@ -50,7 +50,7 @@ public class BinarySearchTree {
 		return x;
 	}
 	
-	public Node maximum()
+	public Node maximum(Node root)
 	{
 		Node x = root;
 		while(x.getRight() != null)
@@ -60,6 +60,22 @@ public class BinarySearchTree {
 		return x;
 	}
 	
+	public Node successor(Node n)
+	{
+		if(n.getRight() != null)
+		{
+			return minimum(n.getRight());
+		}
+		
+		Node y = n.getParent();
+		
+		while(y != null && n == y.getRight())
+		{
+			Node x = y;
+			y = y.getParent();
+		}
+		return y;
+	}
 	public void insert(Node n)
 	{
 		if(n.getData() <= root.getData())

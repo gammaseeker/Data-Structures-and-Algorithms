@@ -87,10 +87,42 @@ public class BinarySearchTree {
 	}
 	public void insert(Node n)
 	{
-		
-		
+		insert(this.root, n);
 	}
 	
+	private void insert(Node root, Node n)
+	{
+		Node y = null;
+		Node x = root;
+		while(x != null)
+		{
+			y = x;
+			if(n.getData() < x.getData())
+			{
+				x = x.getLeft();
+			}
+			else
+			{
+				x = x.getRight();
+			}
+		}
+		n.setParent(y);
+		if(y == null)
+		{
+			this.root = n;
+		}
+		else
+		{
+			if(n.getData() < y.getData())
+			{
+				y.setLeft(n);
+			}
+			else
+			{
+				y.setRight(n);
+			}
+		}
+	}
 	public void delete(Node n)
 	{
 		

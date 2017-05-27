@@ -41,6 +41,25 @@ public class BinarySearchTree {
 		}
 	}
 
+	public Node minimum()
+	{
+		Node x = root;
+		while(x.getLeft() != null)
+		{
+			x = x.getLeft();
+		}
+		return x;
+	}
+	
+	public Node maximum()
+	{
+		Node x = root;
+		while(x.getRight() != null)
+		{
+			x = x.getRight();
+		}
+		return x;
+	}
 	
 	public void insert(Node n)
 	{

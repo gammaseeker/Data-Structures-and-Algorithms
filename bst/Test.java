@@ -20,12 +20,7 @@ public class Test {
 		bst.postOrder();
 		System.out.println();
 		
-		System.out.println(bst.search(11));
-		System.out.println(bst.search(10));
-		System.out.println(bst.search(3));
-		System.out.println();
-		System.out.println("Minimum: " + bst.minimum());
-		System.out.println("Maximum: " + bst.maximum());
+		
 		
 	}
 }

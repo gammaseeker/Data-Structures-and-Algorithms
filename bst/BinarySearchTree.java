@@ -2,7 +2,7 @@ package bst;
 
 public class BinarySearchTree {
 	private Node root;
-	private Node point;
+	//private Node point;
 	public BinarySearchTree()
 	{
 		
@@ -10,13 +10,12 @@ public class BinarySearchTree {
 	public BinarySearchTree(Node root)
 	{
 		this.root = root;
-		this.point = root;
+		
 	}
 	
 	public BinarySearchTree(int data)
 	{
 		this.root = new Node(data);
-		this.point = new Node(data);
 	}
 	
 	public Node search(int target)

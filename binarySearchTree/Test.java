@@ -31,5 +31,13 @@ public class Test {
 		System.out.println("Minimum: " + bst.minimum());
 		System.out.println("Maximum: " + bst.maximum());
 		
+		System.out.println();
+		bst.delete(node2);
+		bst.preOrder();
+		System.out.println();
+		bst.inOrder();
+		System.out.println();
+		bst.postOrder();
+		System.out.println();
 	}
 }

@@ -19,7 +19,7 @@ public class RunwayReservationProblem {
 		{
 			runway.insert(new Node(reservations.get(i)));
 		}*/
-		for(int i = 0; i < 8; i++)
+		for(int i = 0; i < 7; i++)
 		{
 			reserve(getRandomInt(1, 70));
 		}

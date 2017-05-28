@@ -4,8 +4,8 @@ public class Test {
 	public static void main(String[] args)
 	{
 		System.out.println("Begin test for Singly Linked List");
-		singlyLinkedListTest();
-		System.out.println();
+		//singlyLinkedListTest();
+		System.out.println(new Node(5));
 		/*	System.out.println("Begin test for Circular Singly Linked List");
 		circularSinglyLinkedListTest();
 		*/

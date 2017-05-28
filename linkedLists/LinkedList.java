@@ -37,6 +37,10 @@ abstract public class LinkedList
     	{
     		x = x.getNext();
     	}
+    	if(x.getNext() == null && x.getData() != target)
+    	{
+    		return null;
+    	}
     	return x;
     }
     

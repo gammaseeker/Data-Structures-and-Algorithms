@@ -5,17 +5,17 @@ public class Test {
 	{
 		Node root = new Node(5);
 		Node node2 = new Node(10);
-		Node node3 = new Node(11);
+		Node node3 = new Node(15);
 		Node node4 = new Node(3);
-		
-	/*	root.setRight(node2);
-		root.setLeft(new Node(3));
-		node2.setRight(node3);*/
+		Node node5 = new Node(2);
+		Node node6 = new Node(4);
 		
 		BinarySearchTree bst = new BinarySearchTree(root);
 		bst.insert(node2);
 		bst.insert(node3);
 		bst.insert(node4);
+		bst.insert(node5);
+		bst.insert(node6);
 		
 		bst.preOrder();
 		System.out.println();

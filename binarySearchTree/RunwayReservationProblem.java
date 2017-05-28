@@ -7,6 +7,18 @@ public class RunwayReservationProblem {
 	static ArrayList<Integer> reservations = new ArrayList<Integer>();
 	public static void main(String[] args)
 	{
+		/*reservations.add(24);
+		reservations.add(7);
+		reservations.add(38);
+		reservations.add(40);
+		reservations.add(31);
+		reservations.add(29);
+		reservations.add(45);
+		reservations.add(17);
+		for(int i = 0; i < reservations.size(); i++)
+		{
+			runway.insert(new Node(reservations.get(i)));
+		}*/
 		for(int i = 0; i < 8; i++)
 		{
 			reserve(getRandomInt(1, 70));

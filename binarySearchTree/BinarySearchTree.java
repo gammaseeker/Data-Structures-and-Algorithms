@@ -220,7 +220,7 @@ public class BinarySearchTree {
 	
 	private void preOrder(Node root)
 	{
-		System.out.print(root.getData());
+		System.out.print(root.getData() + " ");
 		if(root.getLeft() != null)
 		{
 			preOrder(root.getLeft());
@@ -290,7 +290,7 @@ public class BinarySearchTree {
 		{
 			postOrder(root.getRight());
 		}
-		System.out.print(root.getData());
+		System.out.print(root.getData() + " ");
 	}
 	
 	

@@ -220,6 +220,18 @@ public class BinarySearchTree {
 	
 	private void preOrder(Node root)
 	{
+		System.out.print(root.getData());
+		if(root.getLeft() != null)
+		{
+			preOrder(root.getLeft());
+		}
+		if(root.getRight() != null)
+		{
+			preOrder(root.getRight());
+		}
+	}
+/*	private void preOrder(Node root)
+	{
 		if(root.getLeft() == null &&  root.getRight() == null)
 		{
 			System.out.print(root.getData() + " ");
@@ -240,14 +252,14 @@ public class BinarySearchTree {
 	        
 	          
 	    }
-	}
+	}*/
 	
 	public void postOrder()
 	{
 		postOrder(root);
 	}
 	
-	private void postOrder(Node root)
+	/*private void postOrder(Node root)
 	{
 		if(root.getLeft() == null && root.getRight() == null)
 		{
@@ -267,6 +279,19 @@ public class BinarySearchTree {
 		        }
 		        System.out.print(root.getData() + " ");
 		    }
+	}*/
+	private void postOrder(Node root)
+	{
+		if(root.getLeft() != null)
+		{
+			postOrder(root.getLeft());
+		}
+		if(root.getRight() != null)
+		{
+			postOrder(root.getRight());
+		}
+		System.out.print(root.getData());
 	}
+	
 	
 }

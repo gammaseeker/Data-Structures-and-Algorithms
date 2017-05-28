@@ -127,12 +127,59 @@ public class BinarySearchTree {
 	
 	public void delete(Node n)
 	{
-		
+		delete(this.root, n);
+	}
+	
+	private void delete(Node root, Node n)
+	{
+		if(n.getLeft() == null)
+		{
+			transplant(this.root, n, n.getRight());
+		}
+		else
+		{
+			if(n.getRight() == null)
+			{
+				transplant(this.root, n, n.getLeft());
+			}
+			else
+			{
+				Node y = minimum(n.getRight());
+				if(y.getParent() != n)
+				{
+					transplant(this.root, y, y.getRight());
+					y.setRight(n.getRight());
+					y.getRight().setParent(y);
+				}
+				transplant(this.root, n, y);
+				y.setLeft(n.getLeft());
+				y.getLeft().setParent(y);
+			}
+		}
 	}
 	
 	private void transplant(Node root, Node u , Node v)
 	{
-		
+		if(u.getParent() == null)
+		{
+			this.root = v;
+		}
+		else
+		{
+			if(u == u.getParent().getLeft())
+			{
+				u.getParent().setLeft(v);
+			}
+			else
+			{
+				u.getParent().setRight(v);
+			}
+				
+		}
+		if(v != null)
+		{
+			v.setParent(u.getParent());
+		}
 	}
 	
 	public int get(int index)

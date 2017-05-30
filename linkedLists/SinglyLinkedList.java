@@ -115,6 +115,11 @@ public class SinglyLinkedList extends LinkedList
 		}
 		return x;
 	}
+    
+    public void sort()
+    {
+    	
+    }
 
 }
 

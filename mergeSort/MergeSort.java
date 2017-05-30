@@ -1,5 +1,5 @@
 package mergeSort;
-
+//Use to sort linked list
 public class MergeSort {
 	public static void main(String[] args)
 	{

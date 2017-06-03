@@ -13,9 +13,4 @@ public class AvlTree {
 	{
 		this.root = root;
 	}
-	
-	public void insert(Node n)
-	{
-		
-	}
 }

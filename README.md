@@ -1,2 +1,2 @@
 # Data-Structures-and-Algorithms
-Data Structures and Algorithms Self Studying 2017
+Data Structures and Algorithms Self Studying

@@ -13,7 +13,7 @@ public class TestLinkedHashSet {
 		set.add("Beijing");
 		set.add("New York");
 		
-		System.out.println(set);
+		System.out.println(set);//Maintains order of insertion
 		
 		for(String element: set)
 		{

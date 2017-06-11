@@ -293,5 +293,22 @@ public class BinarySearchTree {
 		System.out.print(root.getData() + " ");
 	}
 	
-	
+	public boolean isBST()
+	{
+		return isBSTUtil(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+	}
+	private boolean isBSTUtil(Node root, int min, int max)
+	{
+		if(root == null)
+		{
+			return true;
+		}
+		
+		if(root.getData() < min || root.getData() > max)
+		{
+			return false;
+		}
+		return (isBSTUtil(root.getLeft(), min, root.getData()-1) &&
+	                isBSTUtil(root.getRight(), root.getData()+1, max));
+	}
 }

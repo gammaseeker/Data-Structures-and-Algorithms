@@ -1,7 +1,8 @@
 package avlTree;
+import binarySearchTree.BinarySearchTree;
 import binarySearchTree.Node;
 
-public class AvlTree {
+public class AvlTree extends BinarySearchTree{
 	private Node root;
 	
 	public AvlTree()

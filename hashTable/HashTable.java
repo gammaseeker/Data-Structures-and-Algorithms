@@ -58,12 +58,6 @@ public class HashTable {
 		}
 	}
 	
-/*	public void insert(int key, int data)
-	{
-		int index = hash(key);
-		this.hashTable[index].add(data);
-	}*/
-	
 	public void insert(Node n)
 	{
 		int index = hash(n.getKey());
